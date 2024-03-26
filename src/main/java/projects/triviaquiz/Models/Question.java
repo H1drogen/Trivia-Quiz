@@ -1,9 +1,9 @@
 package projects.triviaquiz.Models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "questions")
 public record Question() {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
