@@ -5,6 +5,7 @@ import projects.triviaquiz.Models.Question;
 import projects.triviaquiz.Repository.QuizRepository;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class QuizService {
@@ -16,5 +17,11 @@ public class QuizService {
 
     public List<Question> getAllQuestions() {
         return repository.findAll();
+    }
+
+    public Question getRandomQuestion() {
+        List<Question> questions = getAllQuestions();
+        int randomIndex = new Random().nextInt(questions.size());
+        return questions.get(randomIndex);
     }
 }
