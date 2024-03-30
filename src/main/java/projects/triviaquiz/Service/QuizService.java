@@ -15,13 +15,12 @@ public class QuizService {
         this.repository = repository;
     }
 
-    public List<Question> getAllQuestions() {
-        return repository.findAll();
-    }
-
     public Question getRandomQuestion() {
-        List<Question> questions = getAllQuestions();
+        List<Question> questions = repository.findAll();
         int randomIndex = new Random().nextInt(questions.size());
         return questions.get(randomIndex);
     }
+
+
+
 }

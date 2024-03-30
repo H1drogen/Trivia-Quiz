@@ -7,11 +7,11 @@ import jakarta.persistence.*;
 public record Question() {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private static int ID;
+    private static int questionID;
     private static String question;
     private static String option1;
     private static String option2;
     private static String option3;
     private static String option4;
-    private static int AnswerKey;
+    private static int answerKey;
 }
