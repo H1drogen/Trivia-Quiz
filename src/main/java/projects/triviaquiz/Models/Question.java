@@ -4,14 +4,16 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "questions")
-public record Question() {
+public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private static int questionID;
-    private static String question;
-    private static String option1;
-    private static String option2;
-    private static String option3;
-    private static String option4;
-    private static int answerKey;
+    private int questionID;
+    private String question;
+    private String option1;
+    private String option2;
+    private String option3;
+    private String option4;
+    private int answerKey;
+
+    // getters and setters
 }

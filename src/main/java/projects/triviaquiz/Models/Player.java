@@ -1,15 +1,16 @@
 package projects.triviaquiz.Models;
 
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "players")
-public record Player() {
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private static int playerID;
-    private static String teamName;
-    private static int points;
-    private static int[] answeredIDs;
+    private int playerID;
+    private String teamName;
+    private int points;
+    private int[] answeredIDs;
+
+    // getters and setters
 }
