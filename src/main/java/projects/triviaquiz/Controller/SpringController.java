@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import projects.triviaquiz.Models.Question;
 import projects.triviaquiz.Service.QuizService;
 
@@ -21,8 +22,11 @@ public class SpringController {
     }
 
     @GetMapping("/")
-    public String index(){
-        return "Homepage";
+    public ModelAndView index(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index");
+        modelAndView.addObject("message", "Trivia Quiz App");
+        return modelAndView;
     }
 
     @PostMapping("/question")
