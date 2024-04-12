@@ -21,6 +21,8 @@ public class QuizService {
         return questions.get(randomIndex);
     }
 
-
+    public void addQuestion(Question question) {
+        repository.save(question);
+    }
 
 }

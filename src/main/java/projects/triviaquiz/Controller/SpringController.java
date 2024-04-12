@@ -22,10 +22,10 @@ public class SpringController {
 
     @GetMapping("/")
     public String index(){
-        return "Hello World";
+        return "Homepage";
     }
 
-    @PostMapping("/Question")
+    @PostMapping("/question")
     public ResponseEntity<Question> getRandomQuestion() {
         Question question = quizservice.getRandomQuestion();
         if (question != null) {
@@ -34,5 +34,12 @@ public class SpringController {
             return ResponseEntity.status(HttpStatusCode.valueOf(404)).body(null);
         }
     }
+
+    @PostMapping("/question/add")
+    public ResponseEntity<Question> addQuestion(Question question) {
+        quizservice.addQuestion(question);
+        return ResponseEntity.status(HttpStatus.CREATED).body(question);
+    }
+
 
 }
