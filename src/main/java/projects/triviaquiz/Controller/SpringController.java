@@ -29,6 +29,14 @@ public class SpringController {
         return modelAndView;
     }
 
+    @GetMapping("/configuration")
+    public ModelAndView configuration(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("configuration");
+        modelAndView.addObject("message", "Configuration");
+        return modelAndView;
+    }
+
     @PostMapping("/question")
     public ResponseEntity<Question> getRandomQuestion() {
         Question question = quizservice.getRandomQuestion();
