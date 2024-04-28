@@ -6,5 +6,5 @@ import projects.triviaquiz.Models.Player;
 
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long>{
-
+    boolean existsByPlayerID(int playerID);
 }
