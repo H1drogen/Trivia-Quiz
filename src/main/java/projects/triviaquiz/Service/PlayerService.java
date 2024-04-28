@@ -17,5 +17,9 @@ public class PlayerService {
     public Player addPlayer(Player player) {
         return playerRepository.save(player);
     }
+    
+    public boolean existsByPlayerID(int playerID) {
+        return playerRepository.existsByPlayerID(playerID);
+    }
 
 }
