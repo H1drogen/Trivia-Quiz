@@ -11,10 +11,10 @@ public class GameSession {
     private int sessionID;
 
     @OneToMany
-    private int[] playerIDs;
+    private List<Player> playerIDs;
 
     @OneToMany
-    private int[] questionIDs;
+    private List<Question> questionIDs;
 
     // getters and setters
 }
