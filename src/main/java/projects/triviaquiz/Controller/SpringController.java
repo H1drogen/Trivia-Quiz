@@ -47,6 +47,14 @@ public class SpringController {
         }
     }
 
+    @GetMapping("/question/add")
+    public ModelAndView addQuestion(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addQuestion");
+        modelAndView.addObject("message", "Add Question");
+        return modelAndView;
+    }
+
     @PostMapping("/question/add")
     public ResponseEntity<Question> addQuestion(Question question) {
         quizservice.addQuestion(question);
