@@ -14,6 +14,12 @@ import projects.triviaquiz.Service.QuizService;
 
 @RestController
 public class SpringController {
+    private final QuizService quizservice;
+
+    @Autowired
+    public SpringController(QuizService quizservice) {
+        this.quizservice = quizservice;
+    }
 
     @GetMapping("/")
     public ModelAndView index(){
@@ -30,5 +36,30 @@ public class SpringController {
         modelAndView.addObject("message", "Configuration");
         return modelAndView;
     }
+
+    @PostMapping("/question")
+    public ResponseEntity<Question> getRandomQuestion() {
+        Question question = quizservice.getRandomQuestion();
+        if (question != null) {
+            return ResponseEntity.ok(question);
+        } else {
+            return ResponseEntity.status(HttpStatusCode.valueOf(404)).body(null);
+        }
+    }
+
+    @GetMapping("/question/add")
+    public ModelAndView addQuestion(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addQuestion");
+        modelAndView.addObject("message", "Add Question");
+        return modelAndView;
+    }
+
+    @PostMapping("/question/add")
+    public ResponseEntity<Question> addQuestion(Question question) {
+        quizservice.addQuestion(question);
+        return ResponseEntity.status(HttpStatus.CREATED).body(question);
+    }
+
 
 }
