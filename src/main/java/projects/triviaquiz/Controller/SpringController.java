@@ -37,15 +37,15 @@ public class SpringController {
         return modelAndView;
     }
 
-    @PostMapping("/question")
-    public ResponseEntity<Question> getRandomQuestion() {
-        Question question = quizservice.getRandomQuestion();
-        if (question != null) {
-            return ResponseEntity.ok(question);
-        } else {
-            return ResponseEntity.status(HttpStatusCode.valueOf(404)).body(null);
-        }
-    }
+//    @PostMapping("/question")
+//    public ResponseEntity<Question> getRandomQuestion() {
+//        Question question = quizservice.getRandomQuestion();
+//        if (question != null) {
+//            return ResponseEntity.ok(question);
+//        } else {
+//            return ResponseEntity.status(HttpStatusCode.valueOf(404)).body(null);
+//        }
+//    }
 
     @GetMapping("/question/add")
     public ModelAndView addQuestion(){
@@ -55,11 +55,11 @@ public class SpringController {
         return modelAndView;
     }
 
-    @PostMapping("/question/add")
-    public ResponseEntity<Question> addQuestion(Question question) {
-        quizservice.addQuestion(question);
-        return ResponseEntity.status(HttpStatus.CREATED).body(question);
-    }
+//    @PostMapping("/question/add")
+//    public ResponseEntity<Question> addQuestion(Question question) {
+//        quizservice.addQuestion(question);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(question);
+//    }
 
 
 }
