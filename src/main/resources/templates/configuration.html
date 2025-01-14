@@ -5,6 +5,21 @@
     <title>Configurations</title>
 </head>
 <body>
-
+    <h1>Configurations</h1>
+    <form action="/configurations" method="POST">
+        <div>
+            <label for="totalQuestions">Total Questions</label>
+            <input type="number" id="totalQuestions" name="totalQuestions" min="1" required>
+        </div>
+        <div>
+            <label for="totalOptions">Total Options</label>
+            <input type="number" id="totalOptions" name="totalOptions" min="1" required>
+        </div>
+        <div>
+            <label for="totalSeconds">Total Seconds</label>
+            <input type="number" id="totalSeconds" name="totalSeconds" min="1" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
