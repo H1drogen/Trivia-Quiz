@@ -1,6 +1,8 @@
 package projects.triviaquiz.Models;
 
 import jakarta.persistence.*;
+import java.util.List;
+
 
 @Entity
 @Table(name = "players")
@@ -10,7 +12,8 @@ public class Player {
     private int playerID;
     private String teamName;
     private int points;
-    private int[] answeredIDs;
+    @ElementCollection
+    private List<Integer> answeredIDs;
     
     // getters
     public int getPlayerID() {
@@ -25,7 +28,7 @@ public class Player {
         return points;
     }
 
-    public int[] getAnsweredIDs() {
+    public List<Integer> getAnsweredIDs() {
         return answeredIDs;
     }
 
@@ -42,7 +45,7 @@ public class Player {
         this.points = points;
     }
 
-    public void setAnsweredIDs(int[] answeredIDs) {
+    public void setAnsweredIDs(List<Integer> answeredIDs) {
         this.answeredIDs = answeredIDs;
     }
 
