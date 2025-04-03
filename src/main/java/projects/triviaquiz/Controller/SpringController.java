@@ -45,7 +45,7 @@ public class SpringController {
     @GetMapping("/question/add")
     public ModelAndView addQuestion(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("addQuestion");
+        modelAndView.setViewName("setup/addQuestion");
         modelAndView.addObject("message", "Add Question");
         return modelAndView;
     }
