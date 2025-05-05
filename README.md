@@ -2,6 +2,10 @@
 
 Welcome to my Trivia Quiz Project! This project is designed to provide a fun and interactive way for users to test their knowledge of fun trivia questions, to be used in a party-like situations. Built using Spring Boot, this application will offer a seamless experience for multiple players and back-end administrators.
 
+# How to launch
+
+Run SpringBoot on Java main class. Collect password from terminal. Login to main screen on localhost://
+
 # Features
 
     Trivia Quizzes: Choose from a variety of trivia categories.
