@@ -5,7 +5,9 @@ Welcome to my Trivia Quiz Project! This project is designed to provide a fun and
 # How to launch
 
 Configure the database connection in application.properties file.
-Run SpringBoot on Java main class. Collect password from terminal. Login to main screen on localhost://8080
+Run SpringBoot on Java main class. 
+Collect generated security password from terminal with username 'user'. 
+Authenticate and Login to main screen on localhost://8080
 
 # Features
 
